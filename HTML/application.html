@@ -1,0 +1,201 @@
+<!--2025.07.09~11_style advanced-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset ="UTF-8">
+        <title>style advanced: css</title>
+        <style>
+            body {
+                background-color: rgb(216, 245, 255);
+                display:flex;
+                flex-direction: column;
+                justify-content: center; align-items: center;
+            }
+            .card{
+                width:600px;
+                background-color: white; margin: 20px; text-align: left;
+                box-shadow:0 0 50px rgb(107, 217, 254); border-radius: 100px; padding: 50px; font-family: sans-serif;
+            }
+            .container{
+                display:flex; /*flexbox 선언. container 안의 요소들을 가로로 정렬시킴, 기본은 세로 정렬임*/
+                justify-content:center; /*가로 방향 정렬을 어떻게 할것인가? -> center : 가로 가운데 정렬*/
+                align-items:center;
+                gap:20px; /*요소들 사이 간격, flexbox와 grid에서만 작동함.*/
+                height:200px; /*height가 있어야 align-self할 수 있음.*/
+                position:relative; /*absoulte class의 부모 클래스가 되기 위함*/
+                flex-wrap:wrap;
+            }
+            .item{
+                width:80px;
+                height:80px;
+                background: lightcoral;
+                border-radius:20px;
+                display:flex;
+                align-items: center; justify-content:center;
+                flex-wrap: wrap;
+            }
+            .special{
+                align-self:flex-start /*부모의 align-items가 정해졌을때, align-self를 무엇으로 따로 설정하겠단 의미*/
+            }
+            .fixed{
+                position:fixed; top:90%; left:85%;
+                width:10%; height:5%; border-radius:40%;
+                background: lightskyblue;
+                display:flex; align-items: center; justify-content:center;
+                transform: translate(-50%, -50%);
+                transition: width 0.3s ease, height 0.3s ease;
+            }
+            .fixed:hover{
+                width:15%; height:7.5%;
+            }
+            .absolute{
+                position:absolute; /*relative를 position으로 갖는 클래스의 자식클래스가 될 것.*/
+                top:0; left:70%; /*부모 클래스의 상단, 오른쪽에 고정됨*/
+                width:20%;height:40%;background: rgb(255, 211, 211);
+                text-align:center;
+            }
+            .sticky{
+                position: sticky;
+                top:0;
+                background:rgba(173, 255, 47,0.3);
+                padding:10px;
+                font-weight: bold;
+                display:flex; align-items: center; justify-content:center;
+                z-index: 10; /*숫자가 클수록 앞 레이어에 있음. position인 경우에만 작동*/
+            }
+            .shake{
+                animation: shake 0.5s infinite;
+            }
+            @keyframes shake{
+                0%{transform:translateX(0);}
+                25%  { transform: translateX(-5px); }
+                50%  { transform: translateX(5px); }
+                75%  { transform: translateX(-5px); }
+                100% { transform: translateX(0); }
+            }
+            .trans{
+                width:300px; height: 200px; border: 2px dashed black; border-radius:100px; font-size:30px;
+                background-color:skyblue;
+                transition: background-color 0.5s ease; /*ease: 부드럽게*/
+            }
+            .trans:hover{
+                background-color:yellow;
+            }
+            @media (max-width: 600px){
+                /*card 너비보다 화면이 작아지게 되면 요소들의 크기도 작아지도록*/
+                .body{
+                    font-size: 14px;
+                }
+                .card{
+                    width: 65%;
+                    margin: 10px;
+                    font-size: 14px;
+                }
+            }
+
+            /*class 두개의 정보를 둘 다 가지는 객체를 만들 수도 있음. ex. "card container"*/
+        </style>
+    </head>
+    <body>
+        <div class="card" style="position:relative; z-index:10; height: 1px; display:flex; justify-content:center; align-items:center;">
+            <h1> style_advanced : css </h1>
+        </div>
+        <div class="card">
+            <h2>1. display 속성</h2>
+            <ul>
+                <li><div style= "background: lightblue;">div는 기본적으로</div> 
+                    <div style= "background: lightgreen;">block 요소</div> 한줄마다 적용이 된다.</li>
+                <li><span style= "background:lightblue">span은 inline 요소로, 글자처럼</span>
+                    <span style= "background:lightgreen;">나란히 붙는다</span></li>
+                <li> <p> in-line block은 나란히 붙는 블록 같음. 그래서 버튼이나 카드 만들 때 유용</p> 
+                    <div style= "display: inline-block; width:100px; height: 100px; background:lightblue; text-align: center;">A </div>
+                    <div style= "display: inline-block; width:100px; height: 100px; background:lightgreen; text-align: center;">B</div></li>
+            </ul>
+        </div>
+        <div class="card">
+            <h2>2. flexbox: 레이아웃 정렬</h2> <!--style이 display:felx로 선언된 클래스를 flexbox정렬됐다고 함.-->
+            <div class="container"> <!--flexbox 정렬된 클래스-->
+                <div class="item" style="background-color:lightpink;">A</div> 
+                <div class="item special" style="background-color:lightgray">B</div>
+                <div class="item" style="position:relative; top:50px; left:50px;">C</div>
+                <!--position:relative; 원하는 위치로 이동 가능, top이면 아래로, left면 오른쪽으로-->
+            </div>
+            <div class="container">
+                <div class="item" style="flex:1; background-color:lightblue;">1</div> <!--비율 조정-->
+                <div class="item" style="flex:2; background-color: lightgreen;">2</div>
+            </div>
+        </div>
+        <div class="card">
+            <div class="sticky">sticky</div></li>
+            <h2>3. position : 요소 배치</h2>
+                <ul>
+                    <li>relative: 원래 위치를 기준으로 이동함 (좌표가 기준)</li>
+                    <li>absolute: 부모를 기준으로 자유롭게 이동 (다른 요소가 기준)
+                        <ul>
+                            <div style="font-size:16px;">
+                                <li>카드에 버튼 or 이미지 위에 텍스트처럼 요소 두개를 겹치고 싶을 때 </li>
+                            </div>
+                        </ul>
+                        <div class="container" style="background:lightblue; height:100px">
+                            <div class ="absolute">absolute</div>
+                        </div>
+                    </li>
+                    <li>fixed: 브라우저 화면 기준 고정
+                        <div class="fixed">fixed</div></li>
+                        <!--커서 가져다대면 크기가 커지도록 함.-->
+                    <li>sticky: 스크롤 위치에 따라 붙었다 떨어졌다 함
+                </ul>
+            </div>
+        </div>
+        <div class="card">
+            <h2>4. animation, transition, hover</h2>
+                <b>4-1.animation</b>
+                <ul>
+                    <li>기본 구조
+                        <ul>
+                            <li>클래스에서 속성을 결정한다. <br> (동작 이름, 지속 시간, 반복 횟수, 시작 시간, 속도 등)</li>
+                            <li>@keyframes 동작 이름 {}으로 동작을 정의한다.</li> </ul> </li>
+                    
+                    <li>동작 예시
+                        <ul><li>
+                                <div style="display:flex; gap:20px;"> 
+                                <div class = "item shake" style="background-color: lightblue; ">item</div>
+                                <button class = "shake">button</button> </div> </li> </ul> </li>
+                </ul>
+
+                <b>4-2.transition</b>
+                <ul>
+                    <li>정의
+                        <ul>
+                            <li>기본 상태->변경 상태로 자동 <u>부드럽게</u> 전환.<br> @keyframes으로 동작을 만들 필요없음.</li>
+                            <li>transition: [어떤 속성] [몇초동안] [속도 변화 방식] [시작 시간]; 의 구조.</li></ul> </li>
+                </ul>
+
+                <b>4-3.hover</b>
+                <ul>
+                    <li>정의
+                        <ul><li>마우스를 올리면 상태를 바꾸게 함.</li>
+                        <li>.class이름: hover{}로 선언함.</li></ul></li>
+                </ul>
+
+                 <b>cf> trans + hover 동작 예시:</b>
+                    <ul><li> 
+                        button에 마우스 올리면 색깔 변화 <br></p> <button class="trans">transition</button></li></ul>
+            </div>
+        </div>
+
+        <div class="card"> 
+            <h2>5. 미디어 쿼리: 반응형 디자인</h2>
+            <div style="font-size:20px">
+                <ul><li>정의
+                        <ul><li>화면이 작아지고 커짐에 따라 <br> <u>다른 스타일</u>을 적용할 수 있도록 해줌.</li>
+                            <li>flex-wrap과 min-width, max-width를 % 단위로 사용하여 설정할수도 있음.</li></ul>
+                    <li>기본 문법
+                        <ul><li>@media (조건) { 조건이 참일 때 적용할 css } </li></ul></li>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </body>
+</html>

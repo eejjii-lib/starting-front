@@ -1,0 +1,130 @@
+<!--2025.07.09_ css 1. style-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <title>our summer</title>
+        <style>
+            /*이제부터 css 언어*/
+            /*style 태그로 css가 됨, 무조건 head 안에 써야 함*/
+            body { 
+                font-family: 'Times New Roman'; /*body의 글씨들의 폰트를 Segoe UI로 바꿈. 없으면 sabs-serif계열 폰트로.*/
+                /*font-family: 폰트 지정 속성*/
+                background-color: #f8e7e7; /*#하고 색상 고를 수 있음*/
+                margin: 40px; /*바깥 쪽 여백을 모든 방향으로 40px만큼 줄임*/
+                text-align: center; /*텍스트나 인라인 요소들을 정렬, center: 가운데*/
+            }
+
+            .card{ /*card로 지정당한 부분만 카드로 만들어서 스타일 적용, html에서 class="card"로 지정해야 함.*/
+                background-color: white;
+                width: 400px; 
+                margin : 0auto; /*width가 정해져있을 때 가운데 여백을 자동 계산해서 좌우 여백을 나눔. = 가운데 정렬*/
+                padding : 50px; /*내부 내용과 테두리 사이의 거리*/
+                border-radius: 10px; /*모서리를 둥글게 만드는 속성*/
+                box-shadow : 0 0 70px rgb(247, 140, 208); /*가로거리, 세로거리, blur, color*/
+                text-align: left;
+            }
+
+            .box{
+                background-color:white;
+                width: 350px;
+                margin : 0 auto; /*0하고 띄고 auto하면 가운데에 위치하게 할 수 있음*/
+                padding: 50px;
+                border-radius : 400px;
+                box-shadow : 0 0 70px rgb(140, 247, 244);
+            }
+
+            h1{
+                color: #d492da; font-size: 24px; text-align: center;
+            }
+
+            h2{
+                color:#e185f3; font-size: 20px; text-align: center;
+            }
+
+            li{
+                color:purple;
+            }
+
+            img{
+                width: 50px; border-radius: 10px; margin-top: 10px;
+            }
+
+            ul{
+                list-style-type: circle; padding-left: 20px; color:rgb(230, 139, 219);
+            }
+
+            a{
+                color: #802370; text-decoration: none;
+            }
+
+            a:hover{
+                text-decoration: underline;
+            }
+
+            p{
+                margin-top: 20px; line-height: 1.5; color:#6f0f8c
+            }
+        </style>
+    </head>
+    <body>
+        <div class="card"> <!--card로 지정된 부분-->
+            <h1>+@~ My* ^Project^ ?* +</h1>
+            <h2>MENU</h2>
+            <ul>
+                <h4>*~ changing_color ~*</h4>
+                    <ul>
+                        <li>you can change the background color</li>
+                        <li>choose apple, orange, peach!</li>
+                    </ul>
+
+                <h4>^ Move_Poppy ^</h4>
+                    <ul>
+                        <li>you can click and move >>Poppy<<</li>
+                        <li><img src="https://i.namu.wiki/i/vuTI_LwMLLJPKPvWN8iuq_0lTOhFOUOFhLOwLFmjGvoYJt7Xl7hU26tZDtEqcCUPnmlXVQOuMT8bEkqN9hDlMhvLpsuq0MhzEK8iySeDvrZbkt9LdGH_hyq05g_j_ieI_1IVcL9OsqOxFjqvSLuZOg.webp" alt="doggy image"></li>
+                    </ul>
+
+                <h4>@~MY_drawing~@</h4>
+                    <ul>
+                        <li>you can drag your mouse and draw a picture~</li>
+                        <li>you can also clear your drawing and restart!!</li>
+                    </ul>
+
+                <h4>>>CLICK_ME!!<<</h4>
+                    <ol>
+                        <li>counting
+                            <ul>
+                                <li>you can click the button-> plus or minus!</li>
+                            </ul>
+                        </li>
+                        <li>checklist
+                            <ul>
+                                <li>you can check the check box, and record it!</li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                <h4>#write# on >ME<</h4>
+                    <ul>
+                        <li>you can write anything you want!</li>
+                        <li>this is memo~</li>
+                    </ul>
+            </ul>
+
+            <div> <hr>
+                <p>contact: 010-1234-4532 <br> e-mail: dodd32@naver.com</p>
+            </div>
+        </div>
+
+        <br><br><br><Br>
+
+        <div class = "box"> <!--style은 head에 안쓰고 아래와 같이 inline 방식으로 써도 됨. 각각의 요소에 적용할 때 사용.-->
+            <div style="color:#ee9bff;">타오르는 태양 아래 질척이며 녹아가네 <br> 회색빛의 빌딩 숲 </div> <br> <div style = "color:rgb(162, 220, 36);">끝이 없는 기말고사 <br> 뒤척이며 잠 못 드는 잿빛 도시의 소음</div>
+            <div style="color:#ff9b9b;">한순간 나타난 너의 환상 마법같이 빛나 </div> <br> <div style = "color : rgb(183, 223, 255);">부서지는 파도소리, 너의 웃음 내게 손 내밀 때</div>
+            <div style = "color:rgb(162, 220, 36)">눈 앞에 펼쳐진 건 우윳빛 은하수 <br> 피어난 금빛 계절 like our summer </div><div style = "color:#ff9b9b"><br> 어디에 있어도 어떤 계절에도 <br> 우리가 함께라면 feel like summer</div>
+            <i><a href = "https://www.youtube.com/watch?app=desktop&v=M_iYqRNS_o0" target="_blank">tomorrow by together-our summer</a></i>
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,78 @@
+<!--2025.07.14~15_introduction card-->
+
+<!-- 전체 카드 하나, 왼쪽 위에 사진, 오른편에 이름 소개 학벌 등. 아래에 관심 리스트, 이메일, 연락할 방법 추가. 아이콘 추가. 경력 활동 등-->
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UFT-8">
+        <title>introduction_card</title>
+        <style>
+            body{
+                display: flex; flex-direction:column; justify-content: center; align-items: center;
+                font-family:Georgia, 'Times New Roman', Times, serif; font-size:20px;
+            }
+            .center{
+                display:flex; justify-content: center; align-items: center;
+                /*center 클래스로 따로 정의해두고, 가운데 정렬이 필요한 요소에 따로 추가해서 사용 */
+            }
+            .card{
+                background-color: white;
+                /*aspect-ratio: 1/1.3; 가로 세로 비율만 정해두고 각각 배치할 때 width를 설정해줌*/
+                text-align: center; padding: 5px; 
+            }
+            h1, h2 {
+                margin-top: 0; color: rgb(255, 126, 147);
+            } 
+            p{
+                color:rgb(253, 166, 180); font-size:17.2px;
+            }
+            ul{ 
+                list-style:square;
+            }
+            input{
+                width:120px; height: 20px; font-family: 'Times New Roman', Times, serif;
+            }
+            .group{
+                display: flex; gap: 20px;
+            }
+        </style>
+    </head>
+    <body> <!--1.4+ 3.6 + 1.3 + 36.5 + 40.0 +12.0 -->
+        <h2>===========================================</h2>
+        <h1><div style="color:rgb(73, 47, 47);">ID Card😊</div></h1>
+        <h2>===========================================</h2>
+        <!--card 시작-->
+        <div class="card" style="width:650px; border: 7px double rgb(255, 126, 147);">
+            <div style="margin:0; display:flex;">
+                <!--사진 카드-->
+                <div class="center card" style="flex-direction: column; width:220px; height:300px; border: 3px solid rgb(130, 117, 117); ">
+                    <p>ace image face image face im</p><img src="face.jpg" width="220px;"><p>ge face image face image fac</p>
+                </div>
+                <!--정보 카드-->
+                <div class="card" style="width:430px; height:310px;">
+                    <div class="group">
+                        ▪︎ Name : <input type="text" placeholder="Name">
+                        ▪︎ Age  :<input type="text" placeholder="Age" style="width: 55px; position: relative; left: 15px;">
+                    </div>
+                    <div class="group" style="margin-top: 20px;">
+                        ▪︎ School: <input type="text" placeholder="School">
+                        ▪︎ Grade: <input type="text" placeholder="Grade" style="width:55px;">
+                    </div>
+                    <div style="display:flex; margin-top: 20px;">
+                        <div class="card">▪︎ Family:</div>
+                        <div class="card">
+                            <input type="text" placeholder="Family 1"> <input type="text" placeholder="relation"> <br>
+                            <input type="text" placeholder="Family 2"> <input type="text" placeholder="relation"> <br>
+                            <input type="text" placeholder="Family 3"> <input type="text" placeholder="relation"> <br>
+                            <input type="text" placeholder="Family 4"> <input type="text" placeholder="realtion"> <br>
+                            <input type="text" placeholder="Family 5"> <input type="text" placeholder="realtion"> <br>
+                            <input type="text" placeholder="Family 6"> <input type="text" placeholder="realtion"> 
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="card"> hi</div>
+        </div>
+    </body>
+</html>
