@@ -12,18 +12,20 @@
             }
             .card{
                 background-color: white; margin: 20px; 
+                font-family: 'Times New Roman';
                 box-shadow:0 0 50px rgb(107, 217, 254); border-radius: 100px; padding: 50px;
             }
+
         </style>
     </head>
     <body>
         <div class="card">
             <h1>DOM practice</h1>
 
-        <input type="text" id="nameInput" placeholder="write your name">
+        <input type="text" id="nameInput" placeholder="write your name" style ="font-family: 'Times New Roman';">
         <!--nameInput이라는 id를 가진 text 객체를 생성.빈칸에는 write your name이라고 쓰여있음.-->
         
-        <button id="greetBtn">say hello</button>
+        <button id="greetBtn" style="font-family: 'Times New Roman';">say hello</button>
         <!--say hello 라고 적힌 greetBtn라는 id 의 버튼 객체 생성-->
         <p id = "result"></p>
         <script src = "event.js"></script>
