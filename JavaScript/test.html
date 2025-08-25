@@ -3,15 +3,31 @@
     <head>
         <meta charset="UTF-8">
         <title> DOM test</title>
+        <style>
+            body {
+                background-color: rgb(216, 245, 255);
+                display:flex;
+                flex-direction: column;
+                justify-content: center; align-items: center;
+            }
+            .card{
+                background-color: white; margin: 20px; 
+                box-shadow:0 0 50px rgb(107, 217, 254); border-radius: 100px; padding: 50px;
+            }
+        </style>
     </head>
     <body>
-        <h1>DOM practice</h1>
+        <div class="card">
+            <h1>DOM practice</h1>
 
-        <input type="text" id="nameInPut" placeholder="write your name">
+        <input type="text" id="nameInput" placeholder="write your name">
+        <!--nameInput이라는 id를 가진 text 객체를 생성.빈칸에는 write your name이라고 쓰여있음.-->
+        
         <button id="greetBtn">say hello</button>
-
+        <!--say hello 라고 적힌 greetBtn라는 id 의 버튼 객체 생성-->
         <p id = "result"></p>
-
         <script src = "event.js"></script>
+        <!--이제 js를 불러옴. event 라는 이름의 js 파일의 document는 현 페이지가 되고, 위에서 생성한 객체들에 이벤트 리스너를 부여한다.-->
+        </div>
     </body>
 </html>
