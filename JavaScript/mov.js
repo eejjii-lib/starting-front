@@ -15,9 +15,13 @@ function move(){
     x+=2;
     box.style.transform = `translateX(${x}px)`;
     //값이 고정이 아니라서 ""가 아니라 ``사용. 변수 값 넣을 땐 ${} 사용.
-    //또는 "translateX(" + x + " px)" 가능.
+    //또는 "translateX(" + x + "px)" 가능.
     if (x<300) requestAnimationFrame(move);
     //requestAnimationFrame은 다음 화면을 그리기 전에 move 함수를 다시 실행해달라고 요청하는 함수. 계속 활성화시키는 느낌.
     //결론 적으로 x가 300보다 작으면 이벤트를 실행하기 위해, 다음 화면으로 업데이트 될 때 move 함수를 실행한걸 반영하라는 의미.
 }
-move();
+
+move(); ///실행해주기
+//특정 요소에 리스너를 부여한게 아님.
+
+// 3. 라이브러리 활용 (고급 기능)
